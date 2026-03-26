@@ -24,6 +24,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   :root {
     --bg: #3c3c3c;
     --bg-secondary: #4a4a4a;
@@ -54,6 +58,11 @@ body {
 
 *, *::before, *::after {
   box-sizing: border-box !important;
+}
+
+::selection {
+  background: var(--accent) !important;
+  color: #fff !important;
 }
 
 a {
@@ -144,7 +153,7 @@ button:focus-visible {
 
 .page-header .page-button-group,
 .page-header nav {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .page-button,
@@ -190,11 +199,22 @@ button.page-button:hover {
   font-weight: 400 !important;
   color: var(--text) !important;
 }
-.item-title a:visited {
+.items .item-title a:visited {
   color: var(--visited) !important;
 }
-.item-title a:hover {
+.item-title a:hover,
+.items .item-title a:visited:hover {
   color: var(--accent) !important;
+}
+
+/* Prevent visited color on non-article links */
+.category-item a:visited,
+.feed-item a:visited,
+.page-header a:visited,
+.header a:visited,
+.category a:visited,
+.pagination a:visited {
+  color: var(--text) !important;
 }
 
 .category {
@@ -203,26 +223,44 @@ button.page-button:hover {
   letter-spacing: 0.08em;
   font-family: var(--ui-font) !important;
   font-weight: 500;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .category a {
   color: var(--accent) !important;
-  background: var(--accent-bg);
-  padding: 0.15em 0.45em;
-  border-radius: 2px;
+  background: var(--accent-bg) !important;
+  padding: 0.15em 0.45em !important;
+  border-radius: 2px !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
   text-decoration: none !important;
 }
+.category a:hover {
+  color: var(--accent-hover) !important;
+}
+
+/* Feed icons in list view */
+.item-title img,
+.item-meta-info img {
+  width: 16px !important;
+  height: 16px !important;
+  vertical-align: middle;
+  border-radius: 2px;
+}
 
 .item-meta-info {
-  opacity: 0.55;
+  opacity: 0.6;
   font-size: 0.75rem;
   font-family: var(--ui-font) !important;
 }
 
 .item-meta-icons {
-  opacity: 0.55;
+  opacity: 0.7;
   font-size: 0.8rem;
   font-family: var(--ui-font) !important;
 }
@@ -253,6 +291,15 @@ a.page-link {
 .page-button-group a:hover,
 a.page-link:hover {
   color: var(--accent-hover) !important;
+}
+/* Keep action links accent-colored even when visited */
+.entry-actions a:visited,
+.entry-actions li a:visited,
+.item-meta-icons a:visited,
+.item-meta-icons-right a:visited,
+.page-button-group a:visited,
+a.page-link:visited {
+  color: var(--accent) !important;
 }
 
 /* Flatten entry action buttons */
@@ -298,7 +345,12 @@ a.page-link:hover {
   text-decoration-color: var(--link-underline) !important;
   text-underline-offset: 2px;
 }
-.entry-content a:hover {
+.entry-content a:visited {
+  color: var(--visited) !important;
+  text-decoration-color: var(--link-underline) !important;
+}
+.entry-content a:hover,
+.entry-content a:visited:hover {
   color: var(--accent) !important;
   text-decoration-color: var(--accent) !important;
 }
@@ -313,6 +365,13 @@ a.page-link:hover {
   opacity: 0.6;
   font-family: var(--ui-font) !important;
   font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+.entry-tags a {
+  text-decoration: none !important;
+}
+.entry-tags a:hover {
+  text-decoration: underline !important;
 }
 
 .entry-actions {
@@ -328,6 +387,46 @@ a.page-link:hover {
 }
 
 /* === CONTENT ELEMENTS === */
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-family: var(--body-font) !important;
+  color: var(--text) !important;
+  line-height: 1.3;
+  margin: 1.8rem 0 0.6rem;
+}
+.entry-content h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.entry-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.entry-content h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.entry-content ul,
+.entry-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+.entry-content li {
+  margin-bottom: 0.35rem;
+}
+.entry-content li::marker {
+  color: var(--text-secondary);
+}
+
+.entry-content p {
+  margin: 1rem 0;
+}
+
 .entry-content img {
   max-width: 100% !important;
   height: auto !important;
@@ -385,6 +484,12 @@ blockquote {
   color: var(--text-secondary) !important;
   font-style: italic;
 }
+blockquote a {
+  color: var(--text-secondary) !important;
+}
+blockquote a:hover {
+  color: var(--accent) !important;
+}
 
 /* === LAYOUT === */
 .page-content,
@@ -400,6 +505,28 @@ main {
 .category-item.has-unread-entries,
 .feed-item.has-unread-entries {
   background-color: transparent !important;
+}
+
+/* === PREVIOUS / NEXT NAVIGATION === */
+.entry-nav-links {
+  font-family: var(--ui-font) !important;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin: 1.5rem 0;
+}
+.entry-nav-links a {
+  color: var(--accent) !important;
+}
+.entry-nav-links a:hover {
+  color: var(--accent-hover) !important;
+}
+
+/* === STARRED ITEMS === */
+.item.current-item {
+  background-color: var(--accent-bg) !important;
+  border-radius: 3px;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
 }
 
 /* === PAGINATION (bottom only) === */
@@ -434,6 +561,13 @@ input, select, textarea {
   padding: 0.4rem 0.6rem;
   border-radius: 3px;
   transition: border-color 0.15s ease;
+}
+::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.5 !important;
+}
+input:hover, select:hover, textarea:hover {
+  border-color: var(--border) !important;
 }
 input:focus, select:focus, textarea:focus {
   border-color: var(--accent) !important;
@@ -471,6 +605,56 @@ table:not(.entry-content table) td {
   text-align: left;
 }
 
+/* === KEYBOARD SHORTCUTS OVERLAY === */
+.keyboard-shortcuts {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 6px;
+  font-family: var(--ui-font) !important;
+}
+.keyboard-shortcuts th,
+.keyboard-shortcuts td {
+  font-family: var(--ui-font) !important;
+  color: var(--text) !important;
+}
+.keyboard-shortcuts kbd {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  font-family: var(--mono-font) !important;
+  font-size: 0.85em;
+}
+
+/* === CATEGORY PAGE ITEMS === */
+.category-item {
+  padding: 1.25rem 0 !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+.category-item h2 {
+  font-family: var(--body-font) !important;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0 0 0.15rem;
+}
+.category-item .category-info {
+  font-family: var(--ui-font) !important;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+.category-item .category-actions {
+  font-family: var(--ui-font) !important;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+.category-item .category-actions a {
+  color: var(--accent) !important;
+}
+.category-item .category-actions a:hover {
+  color: var(--accent-hover) !important;
+}
+
 /* === MOBILE === */
 @media (max-width: 600px) {
   body {
@@ -495,5 +679,14 @@ table:not(.entry-content table) td {
   }
   .items .item {
     padding: 0.6rem 0;
+  }
+  .entry-content h2 {
+    font-size: 1.25rem;
+  }
+  .entry-content h3 {
+    font-size: 1.1rem;
+  }
+  .category-item {
+    padding: 1rem 0 !important;
   }
 }
