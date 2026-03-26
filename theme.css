@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* === n+1 INSPIRED THEME === */
 
 body {
     background-color: #f0ebe1 !important;
     color: #1a1a1a !important;
-    font-family: Georgia, "Times New Roman", serif !important;
+    font-family: "Literata", Georgia, serif !important;
     max-width: 780px !important;
     margin: 0 auto !important;
     padding: 0 1.25rem !important;
@@ -22,7 +24,7 @@ body {
     padding: 0.6rem 0 !important;
     border: none !important;
     border-bottom: 1px solid rgba(0,0,0,0.1) !important;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.85rem;
     text-align: left !important;
   }
@@ -60,13 +62,18 @@ body {
     color: #1a1a1a !important;
   }
 
+  /* Hide the (+) add subscription link */
+  .header a[href="/subscribe"] {
+    display: none !important;
+  }
+
   /* === PAGE HEADER === */
   .page-header {
     padding: 0 !important;
     margin: 0 !important;
   }
   .page-header h1 {
-    font-family: Georgia, serif !important;
+    font-family: "Literata", Georgia, serif !important;
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: 0.02em;
@@ -76,13 +83,13 @@ body {
   }
 
   .page-header nav {
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.8rem;
   }
 
   .page-header .page-button-group,
   .page-header nav {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 
   .page-button,
@@ -90,7 +97,7 @@ body {
     color: #c1440e !important;
     background: none !important;
     border: none !important;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.8rem;
     cursor: pointer;
   }
@@ -124,7 +131,7 @@ body {
   }
 
   .item-title a {
-    font-family: Georgia, serif !important;
+    font-family: "Literata", Georgia, serif !important;
     font-weight: 400 !important;
     color: #1a1a1a !important;
   }
@@ -137,20 +144,20 @@ body {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-weight: 500;
   }
 
   .item-meta-info {
-    opacity: 0.4;
+    opacity: 0.55;
     font-size: 0.75rem;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
   }
 
   .item-meta-icons {
-    opacity: 0.4;
+    opacity: 0.55;
     font-size: 0.8rem;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
   }
 
   .item-meta-icons a[href^="http"],
@@ -188,14 +195,14 @@ body {
     outline: none !important;
     background: none !important;
     box-shadow: none !important;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.8rem;
   }
 
   /* === ARTICLE VIEW === */
   .entry-header h1 {
     margin: 2rem 0 0.5rem;
-    font-family: Georgia, serif !important;
+    font-family: "Literata", Georgia, serif !important;
     font-weight: 400 !important;
     font-size: 2rem;
     line-height: 1.25;
@@ -221,24 +228,24 @@ body {
   }
 
   .entry-meta {
-    opacity: 0.5;
+    opacity: 0.6;
     font-size: 0.8rem;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
   }
 
   .entry-tags {
-    opacity: 0.5;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    opacity: 0.6;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.8rem;
   }
 
   .entry-actions {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 
   .entry-content {
     margin: 0;
-    font-family: Georgia, serif !important;
+    font-family: "Literata", Georgia, serif !important;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #1a1a1a !important;
@@ -278,13 +285,13 @@ body {
   /* === PAGINATION (bottom only, slightly more visible) === */
   .pagination {
     opacity: 0.5;
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.8rem;
   }
 
   /* === BACK TO TOP (elevator link inside pagination) === */
   .elevator {
-    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+    font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif !important;
     font-size: 0.65rem !important;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -294,6 +301,14 @@ body {
   .elevator:hover {
     opacity: 0.7;
     color: #1a1a1a !important;
+  }
+
+  /* === CATEGORIES & FEED LISTS === */
+  .category-item,
+  .feed-item,
+  .category-item.has-unread-entries,
+  .feed-item.has-unread-entries {
+    background-color: transparent !important;
   }
 
   /* === FORMS & INPUTS === */
