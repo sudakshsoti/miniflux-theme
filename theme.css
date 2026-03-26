@@ -1,0 +1,194 @@
+/* === n+1 INSPIRED THEME === */
+
+body {
+    background-color: #f0ebe1 !important;
+    color: #1a1a1a !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+  }
+  
+  a {
+    color: #1a1a1a !important;
+  }
+  a:hover {
+    color: #c1440e !important;
+  }
+  
+  /* === HEADER === */
+  .header {
+    background-color: #1a1a1a !important;
+    padding: 0.5rem 1.5rem;
+    border: none !important;
+  }
+  .header a {
+    color: #f0ebe1 !important;
+  }
+  .header a:hover {
+    color: #c1440e !important;
+  }
+  
+  /* === PAGE HEADER === */
+  .page-header h1 {
+    font-family: Georgia, serif !important;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #1a1a1a !important;
+  }
+  
+  .page-header .page-button-group {
+    opacity: 0.5;
+    font-size: 0.8rem;
+  }
+  
+  /* === ARTICLE LIST === */
+  .items .item {
+    padding: 0.75rem 0;
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  }
+  
+  .items article,
+  .items .item-header,
+  .items .item-content {
+    border: none !important;
+    outline: none !important;
+  }
+  
+  .item-title a {
+    font-family: Georgia, serif !important;
+    font-weight: 400 !important;
+    color: #1a1a1a !important;
+  }
+  .item-title a:hover {
+    color: #c1440e !important;
+  }
+  
+  .category {
+    color: #c1440e !important;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+  }
+  
+  .item-meta-info {
+    opacity: 0.4;
+    font-size: 0.75rem;
+    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+  }
+  
+  .item-meta-icons {
+    opacity: 0.4;
+    font-size: 0.8rem;
+  }
+  
+  .item-meta-icons a[href^="http"],
+  .external-link {
+    display: none !important;
+  }
+  
+  /* === ACTION BUTTONS === */
+  .entry-actions a,
+  .entry-actions button,
+  .entry-actions li a,
+  .item-meta-icons a,
+  .item-meta-icons-right a,
+  .page-header a,
+  .page-button-group a,
+  a.page-link {
+    color: #c1440e !important;
+  }
+  .entry-actions a:hover,
+  .entry-actions button:hover,
+  .entry-actions li a:hover,
+  .item-meta-icons a:hover,
+  .item-meta-icons-right a:hover,
+  .page-header a:hover,
+  .page-button-group a:hover,
+  a.page-link:hover {
+    color: #2a7ae2 !important;
+  }
+  
+  /* === ARTICLE VIEW === */
+  .entry-header h1 {
+    max-width: 680px;
+    margin: 2rem auto 0.5rem;
+    font-family: Georgia, serif !important;
+    font-weight: 400 !important;
+    font-size: 2rem;
+    line-height: 1.25;
+    color: #1a1a1a !important;
+  }
+  
+  .entry-header .entry-meta a[href^="http"],
+  .entry-header .entry-meta a[href^="https"] {
+    display: none !important;
+  }
+  
+  .entry a,
+  .entry-header a,
+  .entry-meta a,
+  .entry-content a {
+    color: #1a1a1a !important;
+  }
+  .entry a:hover,
+  .entry-header a:hover,
+  .entry-meta a:hover,
+  .entry-content a:hover {
+    color: #c1440e !important;
+  }
+  
+  .entry-meta {
+    opacity: 0.5;
+    font-size: 0.8rem;
+    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+  }
+  
+  .entry-tags {
+    opacity: 0.5;
+  }
+  
+  .entry-actions {
+    opacity: 0.5;
+  }
+  
+  .entry-content {
+    max-width: 680px;
+    margin: 0 auto;
+    font-family: Georgia, serif !important;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1a1a1a !important;
+  }
+  
+  .page-content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  blockquote {
+    border-left: 2px solid #c1440e;
+    padding-left: 1rem;
+    color: #444 !important;
+    font-style: italic;
+  }
+  
+  /* === PAGINATION === */
+  .pagination {
+    opacity: 0.4;
+    font-family: -apple-system, Helvetica, Arial, sans-serif !important;
+  }
+  
+  /* === FORMS & INPUTS === */
+  input, select, textarea {
+    background-color: #fff !important;
+    color: #1a1a1a !important;
+    border: 1px solid rgba(0,0,0,0.15) !important;
+  }
+  
+  .alert, .flash-message {
+    background-color: #e8e3d9 !important;
+    color: #1a1a1a !important;
+  }
