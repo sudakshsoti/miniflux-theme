@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* === n+1 INSPIRED THEME === */
 
 /* === DESIGN TOKENS === */
@@ -16,8 +18,8 @@
   --code-bg: rgba(0, 0, 0, 0.04);
   --link-underline: rgba(0, 0, 0, 0.25);
   --visited: #6b5b4e;
-  --ui-font: -apple-system, Helvetica, Arial, sans-serif;
-  --body-font: Georgia, "Times New Roman", serif;
+  --ui-font: "Inter", -apple-system, Helvetica, Arial, sans-serif;
+  --body-font: "Literata", Georgia, "Times New Roman", serif;
   --mono-font: "SF Mono", Menlo, Consolas, monospace;
 }
 
@@ -113,6 +115,11 @@ button:focus-visible {
 }
 .header .logo a {
   color: var(--text) !important;
+}
+
+/* Hide the (+) add subscription link */
+.header a[href="/subscribe"] {
+  display: none !important;
 }
 
 /* === PAGE HEADER === */
@@ -297,13 +304,13 @@ a.page-link:hover {
 }
 
 .entry-meta {
-  opacity: 0.5;
+  opacity: 0.6;
   font-size: 0.8rem;
   font-family: var(--ui-font) !important;
 }
 
 .entry-tags {
-  opacity: 0.5;
+  opacity: 0.6;
   font-family: var(--ui-font) !important;
   font-size: 0.8rem;
 }
@@ -385,6 +392,14 @@ main {
   padding: 1rem 0 !important;
   margin: 0 !important;
   max-width: none !important;
+}
+
+/* === CATEGORIES & FEED LISTS === */
+.category-item,
+.feed-item,
+.category-item.has-unread-entries,
+.feed-item.has-unread-entries {
+  background-color: transparent !important;
 }
 
 /* === PAGINATION (bottom only) === */
