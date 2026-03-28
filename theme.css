@@ -4,20 +4,20 @@
 
 /* === DESIGN TOKENS === */
 :root {
-  --bg: #f0ebe1;
-  --bg-secondary: #e8e3d9;
-  --bg-input: #fff;
-  --text: #1a1a1a;
-  --text-secondary: #444;
-  --accent: #c1440e;
-  --accent-hover: #2a7ae2;
-  --accent-bg: rgba(193, 68, 14, 0.08);
-  --border: rgba(0, 0, 0, 0.1);
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-strong: rgba(0, 0, 0, 0.15);
-  --code-bg: rgba(0, 0, 0, 0.04);
-  --link-underline: rgba(0, 0, 0, 0.25);
-  --visited: #6b5b4e;
+  --bg: #f5f5f4;             /* stone-100 */
+  --bg-secondary: #e7e5e4;   /* stone-200 */
+  --bg-input: #fafaf9;       /* stone-50 */
+  --text: #1c1917;           /* stone-900 */
+  --text-secondary: #78716c; /* stone-500 */
+  --accent: #c2410c;         /* orange-700 (rust) */
+  --accent-hover: #ea580c;   /* orange-600 */
+  --accent-bg: #e7e5e4;      /* stone-200 (keyboard highlight — neutral elevation) */
+  --border: #e7e5e4;         /* stone-200 */
+  --border-subtle: #f5f5f4;  /* stone-100 */
+  --border-strong: #d6d3d1;  /* stone-300 */
+  --code-bg: #fafaf9;        /* stone-50 */
+  --link-underline: #d6d3d1; /* stone-300 */
+  --visited: #9a3412;        /* orange-800 */
   --ui-font: "Inter", -apple-system, Helvetica, Arial, sans-serif;
   --body-font: "Literata", Georgia, "Times New Roman", serif;
   --mono-font: "SF Mono", Menlo, Consolas, monospace;
@@ -29,20 +29,20 @@
     -moz-osx-font-smoothing: grayscale;
   }
   :root {
-    --bg: #3c3c3c;
-    --bg-secondary: #4a4a4a;
-    --bg-input: #4a4a4a;
-    --text: #f0ebe1;
-    --text-secondary: #c0b8a8;
-    --accent: #e07040;
-    --accent-hover: #6aacf0;
-    --accent-bg: rgba(224, 112, 64, 0.12);
-    --border: rgba(255, 255, 255, 0.12);
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(255, 255, 255, 0.18);
-    --code-bg: rgba(255, 255, 255, 0.08);
-    --link-underline: rgba(255, 255, 255, 0.25);
-    --visited: #a89a8a;
+    --bg: #44403c;             /* stone-700 */
+    --bg-secondary: #57534e;   /* stone-600 */
+    --bg-input: #57534e;       /* stone-600 */
+    --text: #e7e5e4;           /* stone-200 */
+    --text-secondary: #a8a29e; /* stone-400 */
+    --accent: #ea580c;         /* orange-600 */
+    --accent-hover: #fdba74;   /* orange-300 (clear visible lift) */
+    --accent-bg: #57534e;      /* stone-600 (keyboard highlight) */
+    --border: #78716c;         /* stone-500 */
+    --border-subtle: #57534e;  /* stone-600 */
+    --border-strong: #a8a29e;  /* stone-400 */
+    --code-bg: #57534e;        /* stone-600 */
+    --link-underline: #78716c; /* stone-500 */
+    --visited: #a8a29e;        /* stone-400 */
   }
 }
 
@@ -212,9 +212,12 @@ button.page-button:hover {
 .feed-item a:visited,
 .page-header a:visited,
 .header a:visited,
-.category a:visited,
 .pagination a:visited {
   color: var(--text) !important;
+}
+/* Tags must always stay accent-colored */
+.category a:visited {
+  color: var(--accent) !important;
 }
 
 .category {
@@ -232,16 +235,17 @@ button.page-button:hover {
 }
 .category a {
   color: var(--accent) !important;
-  background: var(--accent-bg) !important;
+  background: transparent !important;
+  border: 1px solid var(--accent) !important;
   padding: 0.15em 0.45em !important;
   border-radius: 2px !important;
-  border: none !important;
   outline: none !important;
   box-shadow: none !important;
   text-decoration: none !important;
 }
 .category a:hover {
   color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
 }
 
 /* Feed icons in list view */
@@ -260,7 +264,6 @@ button.page-button:hover {
 }
 
 .item-meta-icons {
-  opacity: 0.7;
   font-size: 0.8rem;
   font-family: var(--ui-font) !important;
 }
@@ -275,31 +278,35 @@ button.page-button:hover {
 .entry-actions button,
 .entry-actions li a,
 .item-meta-icons a,
+.item-meta-icons button,
 .item-meta-icons-right a,
+.item-meta-icons-right button,
 .page-header a,
 .page-button-group a,
 a.page-link {
-  color: var(--accent) !important;
+  color: var(--text-secondary) !important;
   transition: color 0.15s ease;
 }
 .entry-actions a:hover,
 .entry-actions button:hover,
 .entry-actions li a:hover,
 .item-meta-icons a:hover,
+.item-meta-icons button:hover,
 .item-meta-icons-right a:hover,
+.item-meta-icons-right button:hover,
 .page-header a:hover,
 .page-button-group a:hover,
 a.page-link:hover {
-  color: var(--accent-hover) !important;
+  color: var(--accent) !important;
 }
-/* Keep action links accent-colored even when visited */
+/* Keep action links muted even when visited */
 .entry-actions a:visited,
 .entry-actions li a:visited,
 .item-meta-icons a:visited,
 .item-meta-icons-right a:visited,
 .page-button-group a:visited,
 a.page-link:visited {
-  color: var(--accent) !important;
+  color: var(--text-secondary) !important;
 }
 
 /* Flatten entry action buttons */
@@ -524,6 +531,7 @@ main {
 /* === STARRED ITEMS === */
 .item.current-item {
   background-color: var(--accent-bg) !important;
+  border-left: 3px solid var(--accent) !important;
   border-radius: 3px;
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;

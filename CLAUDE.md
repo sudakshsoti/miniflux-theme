@@ -13,12 +13,13 @@ Custom CSS theme for [Miniflux](https://miniflux.app/) RSS reader, inspired by n
 - **Body/article text:** Literata (Google Fonts) with Georgia fallback — optimized for long-form reading
 - **UI chrome** (nav, meta, buttons, pagination): Inter (Google Fonts) with system sans-serif fallback
 
-### Color Palette
-- **Background:** `#f0ebe1` (warm cream)
-- **Text:** `#1a1a1a` (near-black)
-- **Accent/links:** `#c1440e` (burnt orange)
-- **Hover accent:** `#2a7ae2` (blue)
-- **Borders:** `rgba(0,0,0,0.08–0.15)` (subtle black alpha)
+### Color Palette (shadcn/Tailwind)
+- **Neutrals:** Stone palette (stone-50 through stone-950)
+- **Background:** `#f5f5f4` stone-100 (light) / `#1c1917` stone-900 (dark)
+- **Text:** `#1c1917` stone-900 (light) / `#fafaf9` stone-50 (dark)
+- **Accent/links:** `#c2410c` orange-700 (rust)
+- **Hover accent:** `#ea580c` orange-600
+- **Borders:** Solid stone hex values (stone-200/300 light, stone-700/600 dark)
 
 ### Key Styling Choices
 - All `!important` overrides — necessary because Miniflux's built-in styles are aggressive
